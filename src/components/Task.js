@@ -1,9 +1,12 @@
 // import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
 
-const Task = ({ task, onDelete }) => {
+const Task = ({ task, onDelete, onToggle }) => {
 	return (
-		<div className='task'>
+		<div
+			onDoubleClick={() => onToggle(task.id)}
+			className={`task ${task.reminder ? 'reminder' : ''}`}
+		>
 			<h3>
 				{task.text}
 				<FaTimes onClick={() => onDelete(task.id)} style={{ color: 'red', cursor: 'pointer' }} />
