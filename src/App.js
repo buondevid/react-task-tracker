@@ -25,7 +25,7 @@ function App() {
 		return data;
 	};
 
-	// Fetch task from database
+	// Fetch one task from database
 	const fetchTask = async (id) => {
 		const res = await fetch(`http://localhost:5000/tasks/${id}`);
 		const data = await res.json();
